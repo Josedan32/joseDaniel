@@ -4,7 +4,6 @@ import { FeaturedArticleCard } from "./FeaturedArticleCard";
 import { ArticleSlider } from "./ArticleSlider";
 
 
-// Blog Section
 export const BlogSection = () => {
   return (
     <section

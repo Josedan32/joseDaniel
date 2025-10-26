@@ -4,9 +4,15 @@ import { ServiceHeader } from "./Header";
 import { ServicesGrid } from "./ServicesGrid";
 import { ValuesGrid } from "./ValuesGrid";
 import { services, values } from "../../data/services";
+import { useNavigate } from "react-router-dom";
 
 export const ServiceSection = () => {
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+     navigate("/services");
+  }
 
   return (
     <section
@@ -21,8 +27,12 @@ export const ServiceSection = () => {
         <ServicesGrid services={services} />
         <ValuesGrid values={values} />
 
+
+        
         <div className="text-center mt-6">
-          <button className="px-6 py-2 md:px-7 md:py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full font-semibold text-sm md:text-base text-white hover:shadow-md hover:shadow-green-500/30 transition-all duration-300">
+          <button
+          onClick={handleClick}
+          className="px-6 py-2 md:px-7 md:py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full font-semibold text-sm md:text-base text-white hover:shadow-md hover:shadow-green-500/30 transition-all duration-300">
             Ver todos los servicios
           </button>
         </div>
